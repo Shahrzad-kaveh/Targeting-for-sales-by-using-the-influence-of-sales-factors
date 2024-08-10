@@ -1,0 +1,74 @@
+Title:
+Targeting for sales by using the influence of sales factors
+Summery:
+The data information of this project is not real. It is taken from an educational collection called "Faradars" and I have made changes in it for educational purposes. The summary of the project is as follows:
+A company is considering to check the effect of factors affecting sales and determine the sales target. For this reason, he collected these factors and entered their information in a table. In this table, the names of sales employees are written in the first column. These people provide services remotely or by phone. Some of these people have been fired while working. All employees have been given bonuses by the company manager to motivate them to do more work. The years of experience of the employees are also different.
+Also, some employees have used “MS Teams user” software to do their work better. The amount of sales is recorded daily for each person, and of course, the total sales of these people are also calculated in a separate table (Pic 2).
+The period under review is for the three months of January, February and March. Months of the year are Categorical variable and widen the project review. In order to provide a more detailed analysis, I decided to convert them into dummy variables by including one less number in the number of months and provide the analysis only for the months of January and February.
+Since the mathematical model knows only zero and one, wherever the number zero is, it means “No”, and wherever the number one is, it means “Yes”. This method is used to show the presence or absence of some effects of the expected factors.
+Investigating the effect of sales factors on the amount of sales requires identifying independent and dependent variables that are analyzed using regression. In this project, the dependent variable is the amount of sales and the independent variables are factors that affect sales.
+Dependent variable (Y) = Daily sales, Total sales.
+Independent variable (X) = Remote, Calls per Day, Quit, MS Teams User, Bonus Amt, Jan, Feb, Experience.
+This project has three parts:
+1-The first part: Investigation and influence of independent variables on sales
+2-The second part: Investigation and influence of experience on sales
+3-The third part: Sales target
+
+Database:
+There are 10 columns in this database in sheet 1 and 3 columns in sheet 2:
+Seller: The name of the company's Sellers
+Month: Months of activity of sellers
+Daily Sales: Daily sales amount in dollars
+Remote: Sellers who work remotely
+Calls per Day: The number of daily phone calls made by sellers to sell goods
+Quit: People who have left their jobs
+MS Teams User: It is the name of the software that some sellers have used to sell.
+Bonus Amt: The amount of bonus that the manager has planned for the sellers
+Jan: Sales in January
+Feb: Sales in February
+Experience: Number of years and months of work experience
+Total Sales: The total sales of each seller in the two months of January and February
+Questions & Goals:
+1-What is the effect of sales factors as independent variables on daily sales as a dependent variable?
+2-What is the effect of Experience as independent variables on the total of sales as dependent variable?
+3-If the seller has 7 years of sales experience, can you predict his/her total sales?
+4-How can you determine the sales target?
+Steps:
+I created two regression models in sheets 3 and 4.
+Model 1 (sheets 3):  I considered daily sales as the dependent variable and put the factors affecting sales as independent variables. The independent variables at this step were:
+Remote, Calls per Day, Quit, MS Teams User, Bonus Amt, Jan, Feb
+Model 2 (sheets 4): I focused on experience as an independent variable because it seems to be an important factor in sales. And I considered the total sales of each seller as the dependent variable.
+Conditional Formatting:  Using this tool, the factors that have a greater impact on sales are displayed in green and the factors that have less impact on sales are displayed in red.
+Analysis:
+Result of Model 1 Evaluations:
+R-Square = 99%: This is an excellent result. If R-Square be greater than 0.7, it is considered a good result. It means that independent variables or effective factors in sales can explain up to 99% of the dependent variable or sales.
+F Significance = 2.26: If the value of the F Significance test is above 5%, the coefficient is not zero. If the coefficient be zero, the independent variable will be zero. This result shows us that there is a linear relationship between our variables.
+Standard Error = 789.22: This means that the predicted average is $789.22 away from the actual value. If the sample size increases, the average will be closer to the true value.
+Intercept = 0: I considered the Width from origin or fixed value to be zero by default.
+P-Value = (0.15, 2.17, 0.95, 0.57, 0.29, 0.628, and 0.621): If it is less than 5%, the coefficient is significant. When F Significance and P-Value are equal, there is only one independent variable. This model shows that the probability of these results is not zero.
+Result of Model 2 Evaluations:
+R-Square = 97%: This is an excellent result. If R-Square be greater than 0.7, it is considered a good result. It means that independent variables or effective factors in sales can explain up to 97% of the dependent variable or sales.
+F Significance = 3.57: If the value of the F Significance test is above 5%, the coefficient is not zero. If the coefficient be zero, the independent variable will be zero. This result shows us that there is a linear relationship between our variables.
+Standard Error = 13484.30: This means that the predicted average is $ 13484.30 away from the actual value. If the sample size increases, the average will be closer to the true value.
+Intercept = 0: I considered the Width from origin or fixed value to be zero by default.
+P-Value = 8.47: If it is less than 5%, the coefficient is significant. When F Significance and P-Value are equal, there is only one independent variable. This model shows that the probability of these results is not zero.
+Regression Formulas: Y =ax + b
+I use the following formula to determine the amount of sales based on the years of activity:
+Sales amount = (X Variable * Sales experience) + Intercept.
+In other words, for every one year of sales activity, X Variable amount is added to the sales amount.
+Key points:
+	The highest impact on factors affecting sales is related to “calls per day” with a factor of 377.81 and the lowest impact is related to “remote” work with a factor of -454.45.
+	The highest value of standard error in factors affecting sales is related to “quit” and is equal to 744.83 and the lowest value is related to “bonus” and is equal to 0.299.
+	The highest p-value in factors affecting sales is related to "calls per day" and is equal to 2.2 and the lowest is related to "bonus" equal to 0.29.
+	The standard error value for a person's work “experience” is equal to 919.55.
+Results & Recommendations:
+1-The obtained coefficients show that those who worked remotely had the least impact on sales and those who had more daily phone calls had the greatest impact on sales. Therefore, it is suggested to remove remote work management from the company's work contracts or minimize it.
+2-Bonus are a factor in motivating employees, but contrary to expectations, bonus have had a negative effect on sales, the causes of which must be investigated, whether the amount of the bonus was not appropriate, or the amount of its distribution among people was not fair, or there was another reason.
+3-The quit factor has had a negative effect on sales, but since it has the highest standard error value, it can be concluded that it is far from the actual value. Since two out of 8 people were fired, it seems that we should increase the number of people in the statistical community in order to get a better result. In this situation, quit was the second negative factor affecting sales and had an impact of -38.47%.
+4-The use of MS TEAM software has had a positive effect. And it is the second most effective positive factor after the phone call. It is suggested that the management plans to expand its use.
+5-As a result, the effect of daily phone calls can be considered as the main factor in increasing sales. Considering that the sales in January and February were almost the same, we can consider the hypothetical coefficients and rationalize the targeting.
+The output of this analysis is a regression or a linear equation that relates the variables to the coefficient. For example, someone who does not work remotely, does not leave work, works with MS Team software, does not receive a bonus, and his work in January is 45 phone calls per day, as shown in Pic 3, can earn $17215.644. The number 45 is a hypothetical number that the manager can consider as a logical target or change it.
+6-In model 2, which I focused on work experience, the result shown in Pic 4 shows that for every one year of experience, we will have an amount of sales of 14853.84551 dollars. To target the recruitment of people with different work experience, you can use the regression formula. For example, if the manager wants to hire someone with 7 years of work experience, he should expect to make 103,976.91857 dollars in sales according to the formula below:
+Y =ax + b	Y= 7* 14853.84551+0= 103,976.91857
+In this way, we can predict the sales of the coming years.
+7-It is suggested that considering the smallness of the statistical population and the possibility of errors, it is better to expand the statistical population and check the results again.
